@@ -23,3 +23,13 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+# Reference:
+# https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/include-matcher
+Then /the director of "(.*)" should be "(.*)"/ do |title, new_director|
+  movie = Movie.find_by(title: title )
+  # page = movie_path(movie)
+  # puts page.body
+  #Director:\n    Ridley Scott
+  expect(page.body).to include new_director
+end
