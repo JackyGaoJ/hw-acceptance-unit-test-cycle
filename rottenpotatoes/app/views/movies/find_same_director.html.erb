@@ -1,0 +1,10 @@
+<!--  app/views/movies/find_same_director.html.erb -->
+
+<h2>Titles of movies share same director as <em><%= @movie.title %></em></h2>
+<ul>
+  <% @same_director_movies.each do |movie| %>
+    <li>
+      <%= movie.title %>
+    </li>
+  <% end %>
+</ul>
